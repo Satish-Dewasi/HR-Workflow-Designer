@@ -1,0 +1,45 @@
+.toolbar {
+  height: 52px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.toolbar__left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.toolbar__workflow-name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.toolbar__counts {
+  display: flex;
+  gap: 6px;
+}
+
+.toolbar__badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.toolbar__right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

@@ -1,0 +1,114 @@
+{
+  "automations": [
+    {
+      "id": "send_email",
+      "label": "Send Email",
+      "params": ["to", "subject", "body"]
+    },
+    {
+      "id": "generate_doc",
+      "label": "Generate Document",
+      "params": ["template", "recipient"]
+    },
+    {
+      "id": "notify_slack",
+      "label": "Notify Slack Channel",
+      "params": ["channel", "message"]
+    },
+    {
+      "id": "create_ticket",
+      "label": "Create JIRA Ticket",
+      "params": ["project", "summary", "assignee"]
+    },
+    {
+      "id": "update_hrms",
+      "label": "Update HRMS Record",
+      "params": ["employee_id", "field", "value"]
+    }
+  ],
+  "simulations": [
+    {
+      "timestamp": "2026-04-24T04:31:15.466Z",
+      "success": false,
+      "errors": ["No End Node found."],
+      "logs": [],
+      "id": 1
+    },
+    {
+      "timestamp": "2026-04-24T04:45:29.905Z",
+      "success": true,
+      "errors": [],
+      "logs": [
+        {
+          "step": 1,
+          "type": "START",
+          "detail": "Start",
+          "nodeId": "node-c009f34e-b9cf-40c6-a6da-7fad210a7d34"
+        },
+        {
+          "step": 2,
+          "type": " TASK",
+          "detail": "New Task",
+          "nodeId": "node-81832ba3-fcc6-4967-859a-3c7f82ed5359"
+        },
+        {
+          "step": 3,
+          "type": " APPROVAL",
+          "detail": "Approval → Approver: Manager",
+          "nodeId": "node-dce25b4e-f6dc-476d-be46-46f94dd3cbb7"
+        },
+        {
+          "step": 4,
+          "type": " AUTO",
+          "detail": "Automated Step",
+          "nodeId": "node-32878041-ee8b-47f0-9afb-9d171ff15964"
+        },
+        {
+          "step": 5,
+          "type": "END",
+          "detail": "End — \"Workflow complete.\"",
+          "nodeId": "node-aa8175a3-8c54-46d9-b26f-f22baa09fe17"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "timestamp": "2026-04-24T04:45:35.759Z",
+      "success": true,
+      "errors": [],
+      "logs": [
+        {
+          "step": 1,
+          "type": "🟢 START",
+          "detail": "Start",
+          "nodeId": "node-c009f34e-b9cf-40c6-a6da-7fad210a7d34"
+        },
+        {
+          "step": 2,
+          "type": "📋 TASK",
+          "detail": "New Task",
+          "nodeId": "node-81832ba3-fcc6-4967-859a-3c7f82ed5359"
+        },
+        {
+          "step": 3,
+          "type": "✅ APPROVAL",
+          "detail": "Approval → Approver: Manager",
+          "nodeId": "node-dce25b4e-f6dc-476d-be46-46f94dd3cbb7"
+        },
+        {
+          "step": 4,
+          "type": "⚡ AUTO",
+          "detail": "Automated Step",
+          "nodeId": "node-32878041-ee8b-47f0-9afb-9d171ff15964"
+        },
+        {
+          "step": 5,
+          "type": "🔴 END",
+          "detail": "End — \"Workflow complete.\"",
+          "nodeId": "node-aa8175a3-8c54-46d9-b26f-f22baa09fe17"
+        }
+      ],
+      "id": 3
+    }
+  ]
+}

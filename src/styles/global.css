@@ -1,0 +1,169 @@
+/* ── Global Reset & Variables ───────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Brand */
+  --accent:        #f97316;   /* Tredence orange */
+  --accent-light:  #fff7ed;
+  --accent-dim:    #fb923c;
+
+  /* Surface */
+  --bg:            #0f1117;
+  --surface:       #181c27;
+  --surface-2:     #1f2437;
+  --surface-3:     #252b40;
+  --border:        #2e3450;
+  --border-light:  #3a4160;
+
+  /* Text */
+  --text-primary:  #e8eaf0;
+  --text-secondary:#8b92a8;
+  --text-muted:    #555e7a;
+
+  /* Node type colors */
+  --node-start:    #22c55e;
+  --node-task:     #3b82f6;
+  --node-approval: #a855f7;
+  --node-auto:     #f59e0b;
+  --node-end:      #ef4444;
+
+  /* Misc */
+  --radius:        10px;
+  --radius-lg:     16px;
+  --shadow:        0 4px 24px rgba(0,0,0,0.4);
+  --shadow-sm:     0 2px 8px rgba(0,0,0,0.3);
+
+  /* Font */
+  --font-body:     'DM Sans', sans-serif;
+  --font-display:  'Syne', sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 99px; }
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--accent-dim); transform: translateY(-1px); }
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+.btn-ghost:hover { border-color: var(--border-light); color: var(--text-primary); }
+.btn-danger {
+  background: #ef444422;
+  color: #ef4444;
+  border: 1px solid #ef444433;
+}
+.btn-danger:hover { background: #ef444433; }
+.btn-sm { padding: 5px 10px; font-size: 12px; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none !important; }
+
+/* ── Form controls ───────────────────────────────────────── */
+.form-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+.form-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+.form-input, .form-select, .form-textarea {
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 11px;
+  font-size: 13px;
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  width: 100%;
+  transition: border-color 0.15s;
+  outline: none;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--accent);
+}
+.form-textarea { resize: vertical; min-height: 70px; }
+.form-select option { background: var(--surface-2); }
+.form-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.form-toggle input[type="checkbox"] {
+  width: 36px; height: 20px;
+  appearance: none;
+  background: var(--border);
+  border-radius: 99px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.form-toggle input[type="checkbox"]::after {
+  content: '';
+  position: absolute;
+  width: 14px; height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  top: 3px; left: 3px;
+  transition: transform 0.2s;
+}
+.form-toggle input[type="checkbox"]:checked { background: var(--accent); }
+.form-toggle input[type="checkbox"]:checked::after { transform: translateX(16px); }
+
+/* ── React Flow overrides ────────────────────────────────── */
+.react-flow__background { background: var(--bg); }
+.react-flow__edge-path { stroke: var(--border-light); stroke-width: 2; }
+.react-flow__edge.selected .react-flow__edge-path { stroke: var(--accent); }
+.react-flow__handle {
+  width: 10px !important;
+  height: 10px !important;
+  border: 2px solid var(--bg) !important;
+  border-radius: 50% !important;
+}
+.react-flow__controls {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm) !important;
+}
+.react-flow__controls-button {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid var(--border) !important;
+  color: var(--text-secondary) !important;
+  fill: var(--text-secondary) !important;
+}
+.react-flow__controls-button:hover { background: var(--surface-2) !important; }
+.react-flow__attribution { display: none !important; }
+.react-flow__connection-line { stroke: var(--accent); stroke-width: 2; }
